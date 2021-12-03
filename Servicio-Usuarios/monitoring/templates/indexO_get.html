@@ -61,22 +61,22 @@
   <!-- Sidebar (hidden by default) -->
   <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button">Cerrar Menu</a>
-    <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Orden Escogida</a>
-    <form action="../../ordenes/list/" method="post" id="systemForm">
+    <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Usuario Escogido</a>
+    <form action="../../usuarios/list/" method="post" id="systemForm">
     {% csrf_token %}
     <div class="btn-group-vertical w-75">
-    <button class="w3-bar-item w3-button" type="submit" name="system" value= {{ orden.pk|safe }} form="systemForm" class="btn btn-primary btn-lg btn-block">Lista Ordenes</button>
+    <button class="w3-bar-item w3-button" type="submit" name="system" value= {{ usuario.pk|safe }} form="systemForm" class="btn btn-primary btn-lg btn-block">Lista Usuarios</button>
     </div>
     </form>
     <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">Acerca de Stygmergy</a>
   </nav>
 
   <!-- Top menu -->
-  <div class="w3-top">
+  <div class="w3-top" style="background-color:powderblue;">
     <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-      <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
-      <div class="w3-right w3-padding-16"><img src="https://stigmergy.com.co/images/StigmergyLogo_1.png" alt="Stygmergy" width="150"></div>
-      <div class="w3-center w3-padding-16">Orden Escogida - Detalle</div>
+      <div class="w3-button w3-padding-16 w3-left" style="background-color:powderblue;" onclick="w3_open()">☰</div>
+      <div class="w3-right w3-padding-16" style="background-color:powderblue;"><img src="https://stigmergy.com.co/images/StigmergyLogo_1.png" alt="Stygmergy" width="150"></div>
+      <div class="w3-center w3-padding-16" style="background-color:powderblue;">Usuario Escogido - Detalle</div>
     </div>
   </div>
 
@@ -84,43 +84,26 @@
   <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
     <!-- First Photo Grid-->
-    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    <div class="w3-row-padding w3-padding-16 w3-center" id="usuario">
     <div class="w3-half">
-      <h3><b>{{ orden.nameO|safe }}</b></h3>
-      <h4>{{ orden.productosO|safe }}</h4>
-      <img src="{{ orden.urlO|safe }}" alt="Img" width="250">
-      <p>{{ orden.tipoO|safe }}</p>
-      <p>Valor de la orden: {{ orden.valueO|safe }}</p>
-      <p>Fecha creacion: {{ orden.dateTimeO|safe }}</p>
-      <br>
-      <p><b>Status: {{ orden.statusO|safe }} </b></p>
+      <h3><b>{{ usuario.nombre|safe }}</b></h3>
+      <img src="{{ usuario.foto|safe }}" alt="Img" width="250">
+      <h5>Usuario: {{ usuario.usuario|safe }}</h5>
+      <h5>Correo: {{ usuario.correo|safe }}</h5>
+      <h5>Ciudad: Bogota</h5>
+      <h5>Direccion: Cra 45 #26-23</h5>
     </div>
-    <!-- Form de cambio de status -->
     <div class="w3-half">
-      <h3>Cambio de status</h3>
-      <div class="formcontainer">
-      <hr/>
-      <div class="container">
-        <label style="padding-left: 120px" ><strong>Status actual: </strong> {{ orden.statusO|safe }}</label>
-        <br><br>
-        <form action="../../ordenes/update/" method="post" id="systemForm2">
-        {% csrf_token %}
-        <select name="status">
-          <option value="En Hub de despacho">En Hub de despacho</option>
-          <option value="Volando">Volando</option>
-          <option value="En Hub de llegada">En Hub de llegada</option>
-        </select>
-        <button type="submit" name = "pk1" value = "{{ orden.pk|safe }}">Actualizar</button>
-        </form>
+      <br><br><br><br><br><br>
+      <div style="border: 1.5px solid blue">
+      <h5><b>Tipo: {{ usuario.tipo|safe }}</b></h5>
+      <h5>Cantidad Pedidos: {{ usuario.cantidadPedidos|safe }}</h5>
+      <h5>Fecha de inscripcion: {{ usuario.fechaIns|safe }} </b></h5>
       </div>
     </div>
-    </div>
+    <!-- Form de cambio de status -->
     </div>
 
-
-    <br><br>
-    <br><br>
-    <br><br>
     <br><br>
 
     <hr id="about">

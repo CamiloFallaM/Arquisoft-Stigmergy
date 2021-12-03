@@ -39,9 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'measurements',
-    'variables',
-    'ordenes',
+    'usuarios',
     'social_django'
 ]
 
@@ -84,7 +82,7 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "base1",
+        "NAME": "baseusuarios",
         "USER": "camilofallam",
         "PASSWORD": "Cami78910",
         "HOST": "localhost",
