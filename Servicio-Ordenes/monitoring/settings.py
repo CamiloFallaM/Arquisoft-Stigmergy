@@ -85,7 +85,7 @@ DATABASES = {
         "NAME": "base1",
         "USER": "camilofallam",
         "PASSWORD": "Cami78910",
-        "HOST": "107.21.83.18",
+        "HOST": "54.88.90.70",
         "PORT": "5432",
     }
 }
