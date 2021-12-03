@@ -27,7 +27,7 @@ SECRET_KEY = '+n*zlf1bmm@zuxw0ol0uq^no2d77wa%iay8$$46$82zhlkw63!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["stigmergy", "localhost"]
+ALLOWED_HOSTS = ["stigmergy", "localhost", "*"]
 
 
 # Application definition
@@ -85,8 +85,8 @@ DATABASES = {
         "NAME": "base1",
         "USER": "camilofallam",
         "PASSWORD": "Cami78910",
-        "HOST": "localhost",
-        "PORT": "",
+        "HOST": "52.91.76.117",
+        "PORT": "5432",
     }
 }
 
